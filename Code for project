@@ -1,0 +1,31 @@
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+data=pd.DataFrame({'TAP_WorkingMemory': np.random.randint(50, 100, 200),
+    'AgeGroup': np.random.choice([0, 1], 200)
+})
+#visualization
+import seaborn as sns
+sns.boxplot(x='AgeGroup', y='TAP_WorkingMemory', data=data)
+import matplotlib.pyplot as plt
+plt.title('TAP_WorkingMemory scores by Age Groups')
+plt.show()
+#Data Preprocessing
+from sklearn.preprocessing import StandardScaler
+x=data['TAP_WorkingMemory']
+y=data['AgeGroup']
+scaler=StandardScaler()
+x_scaled=scaler.fit_transform(x)
+
+import pandas as pd
+
+import pandas as pd
+
+# Raw URL of your CSV file
+url = 'https://raw.githubusercontent.com/Narmin5/code-lab/first_project/TAP_Working%20Memory.csv'
+
+# Read the CSV file into a DataFrame
+df = pd.read_csv(url)
+
+# Display the first few rows
+print(df.head())
